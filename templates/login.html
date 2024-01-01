@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="../static/style.css" />
+        <link rel="stylesheet" href="../static/reset.css" />
+        <title>login</title>
+    </head>
+
+    <body>
+        <h1>Đăng nhập</h1>
+        <form action="/login" method="POST">
+            <label>Tài khoản:</label>
+            <input type="text" name="username" required /><br />
+            <label>Mật khẩu:</label>
+            <input type="password" name="password" required /><br />
+            <input class="button" type="submit" value="Login" />
+        </form>
+    </body>
+</html>

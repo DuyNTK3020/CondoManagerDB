@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Cập nhật dịch vụ</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/home">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn">Thêm
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="/home/insert/khachHang">Thêm khách hàng</a>
+            <a href="/home/insert/phong">Thêm phòng</a>
+            <a href="/home/insert/thietBi">Thêm thiết bị</a>
+            <a href="/home/insert/dichVu">Thêm dịch vụ</a>
+            <a href="/home/insert/dienNuoc">Thêm điện nước</a>
+            <a href="/home/insert/thuePhong">Thêm thuê phòng</a>
+            <a href="/home/insert/trangBi">Thêm trang bị</a>
+            <a href="/home/insert/suDungDV">Thêm sử dụng dịch vụ</a>
+          </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Xóa
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/home/delete/khachHang">Xóa khách hàng</a>
+              <a href="/home/delete/phong">Xóa phòng</a>
+              <a href="/home/delete/thietBi">Xóa thiết bị</a>
+              <a href="/home/delete/dichVu">Xóa dịch vụ</a>
+              <a href="/home/delete/dienNuoc">Xóa điện nước</a>
+              <a href="/home/delete/thuePhong">Xóa thuê phòng</a>
+              <a href="/home/delete/trangBi">Xóa trang bị</a>
+              <a href="/home/delete/suDungDV">Xóa sử dụng dịch vụ</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Cập nhật
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/home/update/khachHang">Cập nhật khách hàng</a>
+              <a href="/home/update/phong">Cập nhật phòng</a>
+              <a href="/home/update/thietBi">Cập nhật thiết bị</a>
+              <a href="/home/update/dichVu">Cập nhật dịch vụ</a>
+              <a href="/home/update/dienNuoc">Cập nhật điện nước</a>
+              <a href="/home/update/thuePhong">Cập nhật thuê phòng</a>
+              <a href="/home/update/trangBi">Cập nhật trang bị</a>
+              <a href="/home/update/suDungDV">Cập nhật sử dụng dịch vụ</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Tìm kiếm
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/home/search/khachHang">Tìm kiếm khách hàng</a>
+              <a href="/home/search/phong">Tìm kiếm phòng</a>
+              <a href="/home/search/thietBi">Tìm kiếm thiết bị</a>
+              <a href="/home/search/dichVu">Tìm kiếm dịch vụ</a>
+              <a href="/home/search/dienNuoc">Tìm kiếm điện nước</a>
+              <a href="/home/search/thuePhong">Tìm kiếm thuê phòng</a>
+              <a href="/home/search/trangBi">Tìm kiếm trang bị</a>
+              <a href="/home/search/suDungDV">Tìm kiếm sử dụng dịch vụ</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">View
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/home/view/hoaDon">Xem hóa đơn</a>
+              <a href="/home/view/soLuongTB">Xem doanh thiết bị từng phòng</a>
+            </div>
+          </div>
+      </div>
+    <h1>Cập nhật dịch vụ</h1>
+    {% if error_message %}
+        <p class="error" style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    {% if message %}
+        <p style="color: green;">{{ message }}</p>
+    {% endif %}
+    <form action="/home/update/dichVu" method="POST">
+      <label for="maDV">Mã dịch vụ:</label>
+      <input type="text" id="maDV" name="maDV" required><br><br>
+      
+      <label for="tenDV">Tên dịch vụ:</label>
+      <input type="text" id="tenDV" name="tenDV" required><br><br>
+      
+      <label for="giaDV">Giá dịch vụ:</label>
+      <input type="text" id="giaDV" name="giaDV" required><br><br>
+      
+      <input class="button" type="submit" value="Cập nhật">
+    </form>
+</body>
+</html>
